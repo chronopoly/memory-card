@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/Card.css'
 
-function Card( { pokemonName }) {
+function Card({ pokemonName }) {
     const [pokemonImg, setPokemonImg] = useState(null);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ function Card( { pokemonName }) {
 
     return (
         <div className="pokemon-card">
-            <img className="pokemon-image" src={pokemonImg} alt="Image of a pokemon" />
+            <img className="pokemon-image" src={pokemonImg} alt={"Picture of a " + pokemonName} />
             <p className="pokemon-name">{pokemonName}</p>
         </div>
     )
