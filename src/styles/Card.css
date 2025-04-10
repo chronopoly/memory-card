@@ -1,0 +1,10 @@
+.pokemon-card {
+    max-width: 280px;
+    border: 1px solid black;
+}
+
+.pokemon-image {
+    display: block;
+    width: 265px;
+    height: 265px;
+}
