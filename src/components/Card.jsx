@@ -8,7 +8,7 @@ function Card({ pokemonName }) {
         fetch("https://pokeapi.co/api/v2/pokemon/" + pokemonName)
         .then(response => response.json())
         .then(response => setPokemonImg(response.sprites.other.dream_world.front_default));
-    })
+    }, [pokemonName])
 
     return (
         <div className="pokemon-card">
