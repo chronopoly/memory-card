@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/Card.css'
 
-function Card({ pokemonName }) {
+function Card({ pokemonName, onClick }) {
     const [pokemonImg, setPokemonImg] = useState(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ function Card({ pokemonName }) {
     }, [pokemonName])
 
     return (
-        <div className="pokemon-card">
+        <div className="pokemon-card" onClick={onClick}>
             <img className="pokemon-image" src={pokemonImg} alt={"Picture of a " + pokemonName} />
             <p className="pokemon-name">{pokemonName}</p>
         </div>
