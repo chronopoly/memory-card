@@ -12,7 +12,6 @@ export default function shuffleArray(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temp;
     }
-    console.log(array); 
 
     return array;
 }
