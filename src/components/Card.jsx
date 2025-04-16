@@ -1,25 +1,42 @@
 import { useEffect, useState } from 'react'
 import '../styles/Card.css'
 
-function Card({ pokemon, handleScore }) {
+function Card({ pokemon, score, shufflePokemon}) {
     const [pokemonImg, setPokemonImg] = useState(null);
+    const [clicked, setClicked] = useState(false);
+
+    // mark card as unclicked if score was reset
+    if (clicked && score.currentScore === 0) setClicked(false);
+
+    function handleScore() {
+        if (clicked) {
+            // if hard has been clicked already reset score to zero
+            score.setCurrentScore(0);
+        } else {
+            // increment score, update top score if needed and mark card as clicked
+            score.setCurrentScore(score.currentScore + 1);
+            score.currentScore + 1 > score.topScore 
+            ? score.setTopScore(score.currentScore + 1) 
+            : null;
+            setClicked(true);
+        }
+    }
 
     function handleClick() {
-        // copy the pokemon object so we can pass it as an argument to handleScore in App
-        const pokemonCopy = {...pokemon};
-        handleScore(pokemonCopy);
+        handleScore();
+        shufflePokemon();
     }
 
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon.name)
+        fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon)
         .then(response => response.json())
         .then(response => setPokemonImg(response.sprites.other.dream_world.front_default));
-    }, [pokemon.name])
+    }, [pokemon])
 
     return (
         <div className="pokemon-card" onClick={handleClick}>
-            <img className="pokemon-image" src={pokemonImg} alt={"Picture of a " + pokemon.name} />
-            <p className="pokemon-name">{pokemon.name}</p>
+            <img className="pokemon-image" src={pokemonImg} alt={"Picture of a " + pokemon} />
+            <p className="pokemon-name">{pokemon}</p>
         </div>
     )
 }
