@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
+import Scoreboard from './components/Scoreboard';
 import shuffleArray from './utils/shuffleArray';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+      <Scoreboard currentScore={currentScore} topScore={topScore} />
       {pokemonList.map(pokemon => {
         return <Card 
           pokemon={pokemon}
