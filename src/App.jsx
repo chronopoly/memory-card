@@ -28,7 +28,7 @@ function App() {
 
   function handleScore(pokemon) {
     if (pokemon.clicked) {
-      // if card has been clicked before set score to zero and mark all card as unclicked
+      // if card has been clicked before set score to zero and mark all cards as unclicked
       setCurrentScore(0);
       const newList = [...pokemonList];
       newList.forEach(pokemon => {pokemon.clicked = false});
