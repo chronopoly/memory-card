@@ -13,11 +13,8 @@ function Card({ pokemon, score, shufflePokemon}) {
             // if hard has been clicked already reset score to zero
             score.setCurrentScore(0);
         } else {
-            // increment score, update top score if needed and mark card as clicked
+            // increment score and mark card as clicked
             score.setCurrentScore(score.currentScore + 1);
-            score.currentScore + 1 > score.topScore 
-            ? score.setTopScore(score.currentScore + 1) 
-            : null;
             setClicked(true);
         }
     }

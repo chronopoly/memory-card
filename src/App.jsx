@@ -29,12 +29,12 @@ function App() {
 
   return (
     <>
-      <Scoreboard currentScore={currentScore} topScore={topScore} />
+      <Scoreboard currentScore={currentScore} topScore={topScore} setTopScore={setTopScore} />
       {pokemonList.map(pokemon => {
         return <Card 
           pokemon={pokemon}
           key={pokemon}
-          score={{currentScore, topScore, setCurrentScore, setTopScore}}
+          score={{currentScore, setCurrentScore}}
           shufflePokemon={shufflePokemon}   
           />
         })}
