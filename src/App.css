@@ -12,7 +12,9 @@
 }
 
 body {
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    height: 100vh;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
     font-family: var(--main-font);
     display: flex;
     flex-direction: column;
