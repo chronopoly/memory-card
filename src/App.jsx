@@ -29,7 +29,15 @@ function App() {
 
   return (
     <>
-      <Scoreboard currentScore={currentScore} topScore={topScore} setTopScore={setTopScore} />
+      <header>
+        <div className='left-section'>
+          <h1>Pokemon Memory Game</h1>
+          <p className='instruction'>Click on the pokemon cards to get points, but don't click on a same card more than once</p>
+        </div>
+        <div className='right-section'>
+          <Scoreboard currentScore={currentScore} topScore={topScore} setTopScore={setTopScore} />
+        </div>
+      </header>
       <div className='card-container'>
         {pokemonList.map(pokemon => {
           return <Card 

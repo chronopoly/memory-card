@@ -1,15 +1,48 @@
+:root {
+    --yellow: #feca1b;
+    --red: #ef5350;
+    --white: #FAF9F6;
+    --header-font: "Bangers", system-ui;
+    --main-font: "Silkscreen", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    padding: 12px;
+    background-color: var(--white);
+    font-family: var(--main-font);
     display: flex;
     flex-direction: column;
 }
 
+/* Header styles */
+header {
+    padding: 12px;
+    background: var(--red);
+    background: linear-gradient(186deg, rgba(239, 83, 80, 1) 0%, rgba(117, 63, 65, 1) 34%, rgba(38, 50, 56, 1) 74%);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    color: var(--yellow);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: var(--header-font);
+    font-size: 3em;
+}
+
+.instruction {
+    font-size: 0.8em;
+}
+
+/* Main content */
 .card-container {
+    margin: 12px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
