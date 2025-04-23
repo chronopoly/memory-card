@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.pokemon-card:hover {
+    cursor: pointer;
+}
+
 .pokemon-image {
     background-color: #FAF9F6;
     display: block;
