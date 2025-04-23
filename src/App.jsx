@@ -29,6 +29,12 @@ function App() {
     setPokemonList([...shuffleArray(newList)]);
   }
 
+  // Gets passed as a prop to Scoreboard
+  function handleRestart() {
+    setCurrentScore(0);
+    setTopScore(0);
+  }
+
   return (
     <>
       <header>
@@ -37,7 +43,7 @@ function App() {
           <p className='instruction'>Click on the pokemon cards to get points, but don't click on a same card more than once</p>
         </div>
         <div className='right-section'>
-          <Scoreboard currentScore={currentScore} topScore={topScore} setTopScore={setTopScore} />
+          <Scoreboard currentScore={currentScore} topScore={topScore} handleRestart={handleRestart} />
         </div>
       </header>
       <div className='card-container'>

@@ -1,3 +1,14 @@
 .scoreboard p {
     color: #d44e4c;
 }
+
+.restart-button {
+    padding: 4px 8px;
+    color: #d44e4c;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: bold;
+}
+
+.restart-button:hover {
+    cursor: pointer;
+}
