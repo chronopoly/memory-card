@@ -22,6 +22,8 @@ function App() {
     "Psyduck", 
   ]);
 
+  if (currentScore > topScore) setTopScore(currentScore); // update top score if needed
+
   function shufflePokemon() {
     const newList = pokemonList;
     setPokemonList([...shuffleArray(newList)]);
