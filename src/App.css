@@ -43,8 +43,10 @@ header h1 {
 
 /* Main content */
 .card-container {
+    height: 100%;
     margin: 12px;
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
